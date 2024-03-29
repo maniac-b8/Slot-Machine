@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .slot-machine {
+    text-align: center;
+  }
+  
+  .display {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slot {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+  }
+  
+  .controls {
+    margin-top: 20px;
+  }
+  
+  input[type="number"], button {
+    margin: 5px;
+  }
+  
+  button {
+    position: relative;
+  }
+  
+  .handle {
+    width: 20px;
+    height: 80px;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
