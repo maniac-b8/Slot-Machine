@@ -14,4 +14,12 @@ let balance = startingAmount;
 /*----- functions -----*/
 function init() {
     balanceElement.textContent = balance;
+    render();
   }
+
+function render() {
+    balanceElement.textContent = balance;
+  }  
+
+
+  init();
