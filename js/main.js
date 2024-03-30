@@ -45,4 +45,32 @@ function handleSpin() {
     enableSpinButton();
   }
 }
+function validateWager(wager) {
+  if (isNaN(wager) || wager <= 0 || wager > balance) {
+    resultElement.textContent = 'Invalid wager amoubnt. Please enter a valid wager.';
+    return false;
+  }
+  return true;
+}
+function startSlotMachineAnimation(wager) {
+  let counter = 0;
+  const maxFlashes = 12;
+  const initialFlashes = 8;
+  let intervalSpeed = 100;
+  const slowingDownFactor = 50;
+  const slowingPoint = maxFlashes - initialFlashes;
+  const flashingInterval = setInterval(() => {
+    const results = generateRandomResults();
+    displaySlotResults(results);
+    counter++
+    if (counter >= maxFlashes){
+      clearInterval(flashingInterval);
+      handleSpinResult(results, wager);
+    }
+    if (counter >= slowingPoint) {
+      intervalSpeed += slowingDownFactor;
+    }
+  }, intervalSpeed);
+}
+
   init();
