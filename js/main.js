@@ -24,7 +24,7 @@ const balanceElement = document.getElementById('balance');
 const messageWindow = document.getElementById('message-window');
 
 /*----- event listeners -----*/
-
+spinButton.addEventListener('click', handleSpin);
 
 /*----- functions -----*/
 function init() {
@@ -36,5 +36,13 @@ function render() {
     balanceElement.textContent = balance;
   }  
 
-
+function handleSpin() {
+  disableSpinButton();
+  const wager = parseInt(wagerInput.value);
+  if (validateWager(wager)) {
+    startSlotMachiineAnimation(wager);
+  } else {
+    enableSpinButton();
+  }
+}
   init();
