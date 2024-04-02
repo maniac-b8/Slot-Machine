@@ -124,10 +124,30 @@ function handleSpinResult(results, wager) {
       resultElement.textContent = `You lost. New Balance: ${balance}`;
     }
   }
-
   if (balance <= 0) {
     handleZeroBalance();
   }
   render();
+}
+function disableSpinButton() {
+  spinButton.disable = true;
+}
+function enableSpinButoon() {
+  spinButton.disable = false;
+}
+function handleZeroBalance() {
+  disableSpinButton();
+  balance = 0;
+  messageWindow.textContent = 'You have lost all your balance. Click the reset button to start again.';
+  messageWindow.style.display = 'block';
+  const resetButton = document.createElement('button');
+  resetButton.textContent = 'Play Again';
+  resetButton.addEventListener('click', () => {
+    balance = startingAmount;
+    messageWindow.style.display = 'none';
+    resultElement.textContent = '';
+    render();
+  });
+  messageWindow.appendChild(resetButton);
 }
   init();
