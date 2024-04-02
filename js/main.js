@@ -1,5 +1,5 @@
 /*----- constants -----*/
-const symbols = ['🍒', '🍋', '🍇', '🍊', '🍉'];
+const symbols = ['🍒', '🍋','🍋', '🍇','🍇','🍇', '🍊','🍊','🍊', '🍉','🍉','🍉','🍉'];
 
 const payouts = {
   '🍒🍒🍒': 50,
@@ -7,6 +7,14 @@ const payouts = {
   '🍇🍇🍇': 30,
   '🍊🍊🍊': 20,
   '🍉🍉🍉': 10,
+};
+
+const partialPayouts = {
+  '🍒': 5,
+  '🍋': 4,
+  '🍇': 3,
+  '🍊': 2,
+  '🍉': 1, 
 };
 
 /*----- state variables -----*/
@@ -71,6 +79,19 @@ function startSlotMachineAnimation(wager) {
       intervalSpeed += slowingDownFactor;
     }
   }, intervalSpeed);
+}
+function generateRandomResults() {
+  const results = [];
+  for (let i = 0; i <3; i++) {
+    const randomIndex = Math.floor(Math.random() * symbols.length);
+    results.push(symbols[randomIndex]);
+  }
+  return results;
+}
+function displaySlotResults(results) {
+  slot1Element.textContent = results[0];
+  slot2Element.textContent = results[1];
+  slot3Element.textContent = results[2];
 }
 
   init();
