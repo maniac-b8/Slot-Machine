@@ -102,7 +102,7 @@ function init() {
     const resultString = results.join('');
     let winnings = 0;
     if (slotConfig.payouts[resultString]) {
-      winnings = payouts[resultString] * wager;
+      winnings = slotConfig.payouts[resultString] * wager;
       resultElement.textContent = `You won ${winnings}! New balance: ${balance}`;
     } else {
       // Check for partial matches
@@ -131,7 +131,7 @@ function init() {
       handleZeroBalance();
     }
     render();
-  }
+  }  
   function disableSpinButton() {
     spinButton.disabled = true;
   }
