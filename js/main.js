@@ -94,4 +94,40 @@ function displaySlotResults(results) {
   slot3Element.textContent = results[2];
 }
 
+function handleSpinResult(results, wager) {
+  const resultString = results.join('');
+  let winnigns = 0;
+  if (payouts[resultString]) {
+    winnings = payouts[resultString] * wager;
+    resultElement.textContent = `You won ${winnings}! New balance: ${balance}`;
+  } else {
+    //check for partial matches
+    const symbolCounts = results.reduce((acc, symbol) => {
+      acc[symbol] = (acc[symbol] || 0) + 1;
+      return acc;
+    }, {});
+
+    let partialMatchFound = false;
+    for(const symbol in symbolCounts) {
+      if (symbolCounts[symbol] === 2) {
+        winnings = partialPayouts[symbol] * wager;
+        balance += winnings;
+        resultElement.textContent = `Partial match of ${symbol}. You won ${winnings}! 
+        New balance: ${balance}`;
+        partialMatchFound = true;
+        break;
+      }
+    }
+    //No matches of partials
+    if (!partialMatchFound) {
+      balance -= wager;
+      resultElement.textContent = `You lost. New Balance: ${balance}`;
+    }
+  }
+
+  if (balance <= 0) {
+    handleZeroBalance();
+  }
+  render();
+}
   init();
