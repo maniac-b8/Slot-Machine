@@ -47,7 +47,7 @@ function init() {
     } else {
       enableSpinButton();
     }
-  } 
+  }
 
   function handleSpin() {
     disableSpinButton();
@@ -58,6 +58,7 @@ function init() {
       enableSpinButton();
     }
   }
+
   function validateWager(wager) {
     if (isNaN(wager) || wager <= 0 || wager > balance) {
       resultElement.textContent = 'Invalid wager amount. Please enter a valid wager.';
@@ -65,6 +66,7 @@ function init() {
     }
     return true;
   }
+
   function startSlotMachineAnimation(wager) {
     let counter = 0;
     const maxFlashes = 12;
@@ -85,6 +87,7 @@ function init() {
       }
     }, intervalSpeed);
   }
+
   function generateRandomResults() {
     const results = [];
     for (let i = 0; i < 3; i++) {
@@ -93,11 +96,13 @@ function init() {
     }
     return results;
   }
+
   function displaySlotResults(results) {
     slot1Element.textContent = results[0];
     slot2Element.textContent = results[1];
     slot3Element.textContent = results[2];
   }
+
   function handleSpinResult(results, wager) {
     const resultString = results.join('');
     let winnings = 0;
@@ -132,12 +137,15 @@ function init() {
     }
     render();
   }  
+
   function disableSpinButton() {
     spinButton.disabled = true;
   }
+
   function enableSpinButton() {
     spinButton.disabled = false;
   }
+  
   function handleZeroBalance() {
     disableSpinButton();
     balance = 0;
