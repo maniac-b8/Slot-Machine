@@ -1,20 +1,20 @@
 /*----- constants -----*/
-const symbols = ['🍒', '🍋','🍋', '🍇','🍇','🍇', '🍊','🍊','🍊', '🍉','🍉','🍉','🍉'];
-
-const payouts = {
-  '🍒🍒🍒': 50,
-  '🍋🍋🍋': 40,
-  '🍇🍇🍇': 30,
-  '🍊🍊🍊': 20,
-  '🍉🍉🍉': 10,
-};
-
-const partialPayouts = {
-  '🍒': 5,
-  '🍋': 4,
-  '🍇': 3,
-  '🍊': 2,
-  '🍉': 1, 
+const slotConfig = {
+  symbols: ['🍒', '🍋', '🍋', '🍇', '🍇', '🍇', '🍊', '🍊', '🍊', '🍉', '🍉', '🍉', '🍉'],
+  payouts: {
+    '🍒🍒🍒': 50,
+    '🍋🍋🍋': 40,
+    '🍇🍇🍇': 30,
+    '🍊🍊🍊': 20,
+    '🍉🍉🍉': 10,
+  },
+  partialPayouts: {
+    '🍒': 5,
+    '🍋': 4,
+    '🍇': 3,
+    '🍊': 2,
+    '🍉': 1,
+  }
 };
 
 /*----- state variables -----*/
@@ -88,8 +88,8 @@ function init() {
   function generateRandomResults() {
     const results = [];
     for (let i = 0; i < 3; i++) {
-      const randomIndex = Math.floor(Math.random() * symbols.length);
-      results.push(symbols[randomIndex]);
+      const randomIndex = Math.floor(Math.random() * slotConfig.symbols.length);
+      results.push(slotConfig.symbols[randomIndex]);
     }
     return results;
   }
@@ -101,7 +101,7 @@ function init() {
   function handleSpinResult(results, wager) {
     const resultString = results.join('');
     let winnings = 0;
-    if (payouts[resultString]) {
+    if (slotConfig.payouts[resultString]) {
       winnings = payouts[resultString] * wager;
       resultElement.textContent = `You won ${winnings}! New balance: ${balance}`;
     } else {
@@ -114,7 +114,7 @@ function init() {
       let partialMatchFound = false;
       for (const symbol in symbolCounts) {
         if (symbolCounts[symbol] === 2) { // Partial match found
-          winnings = partialPayouts[symbol] * wager;
+          winnings = slotConfig.partialPayouts[symbol] * wager;
           balance += winnings;
           resultElement.textContent = `Partial match of ${symbol}. You won ${winnings}! New balance: ${balance}`;
           partialMatchFound = true;
