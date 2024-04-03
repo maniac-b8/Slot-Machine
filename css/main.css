@@ -9,97 +9,106 @@ body, html {
 }
 
 body {
-   font-family: "Girassol", sans-serif;
-   background-image: url('bg2.jpg');
-   font-size: 40px;
-   color: black;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   margin-left: 10vh;
-   background-size: cover;
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-end;
-   align-items: center;
-   height: 100vh;
-  }
-  
-  .slot-machine {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-  }
-  .message-window {
-    position: absolute;
-    top: 50%; /* Adjust as necessary */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%; /* You can adjust the width */
-    text-align: center;
-    display: none; /* Initially hidden */
-    color: #FFF; /* Text color */
-    background-color: rgba(0,0,0,0.7); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
-  }
+  font-family: "Girassol", sans-serif;
+  background-image: url('bg2.jpg');
+  font-size: 46px; /* Set a fixed font size (adjust as needed) */
+  color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  margin-left: 2vh; /* Using vh for margin */
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+}
 
-  .display {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    justify-content: center;
-    align-items: center;
-    gap: 200px;
-    margin-right: 200px;
-  }
-  
-  .slot {
-    width: 200px;
-    height: 200px;
-    border: 1px transparent;
-    margin-top: 10px;
-    margin-right: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    min-width: 200px; /* Ensure slot boxes maintain width */
-    min-height: 200px;
-    position: relative;
-  }
-  
-  .controls {
-    margin-top: 150px;
-    margin-right: 50px;
-  }
-  
-  #result, .balance-display {
-    position: absolute;
-    top: 4%; /* Adjust based on your layout */
-    width: 80%;
-    left: 15%;
-    text-align: center;
-  }
+.slot-machine {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
 
-  input[type="number"], button {
-    margin: 5px;
-  }
-  
-  button {
-    position: relative;
-  }
-  
-  .handle {
-    width: 20px;
-    height: 80px;
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
+.message-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust as needed */
+  text-align: center;
+  display: none;
+  color: #FFF;
+  background-color: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.display {
+  display: grid;
+  grid-template-columns: repeat(3, 200px); /* Set a fixed width for grid columns */
+  justify-content: center;
+  align-items: center;
+  gap: 180px; /* Set a fixed gap size */
+  margin-right: 40px; /* Set a fixed margin */
+}
+
+.slot {
+  width: 200px; /* Set a fixed width for slots */
+  height: 200px; /* Set a fixed height for slots */
+  border: 5px transparent;
+  margin-top: 50px; /* Set a fixed margin */
+  margin-right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 86px; /* Set a fixed font size */
+  min-width: 200px;
+  min-height: 200px;
+  position: relative;
+}
+
+.controls {
+  margin-top: 50px; /* Set a fixed margin */
+  margin-right: 20px; /* Set a fixed margin */
+  margin-bottom: 150px;
+}
+
+.controls button {
+  font-size: 24px; /* Increase the font size of the button */
+  padding: 10px 20px; /* Increase the padding around the text */
+  height: 50px; /* Increase the height of the button */
+}
+
+#result, .balance-display {
+  font-size: 38px;
+  color: silver;
+  position: absolute;
+  top: 85%; /* Adjust based on your layout */
+  width: 80%;
+  left: 10%;
+  text-align: center;
+}
+
+input[type="number"], button {
+  margin: 10px; /* Set a fixed margin */
+}
+
+button {
+  position: relative;
+}
+
+.handle {
+  width: 10px; /* Set a fixed width for handle */
+  height: 40px; /* Set a fixed height for handle */
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
