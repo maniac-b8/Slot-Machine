@@ -1,33 +1,52 @@
-.tac-one-regular {
-  font-family: "Tac One", sans-serif;
+.girassol-regular {
+  font-family: "Girassol", serif;
   font-weight: 400;
   font-style: normal;
 }
 
+body, html {
+  overflow-y: hidden;
+}
+
 body {
-  font-family: "Tac One", sans-serif;
-  background-image: url('maxresdefault.jpg');
-  font-size: 40px;
-  color: white;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100vh;
+   font-family: "Girassol", sans-serif;
+   background-image: url('bg2.jpg');
+   font-size: 40px;
+   color: black;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   margin-left: 10vh;
+   background-size: cover;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: center;
+   height: 100vh;
   }
   
   .slot-machine {
     text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  .message-window {
+    position: absolute;
+    top: 50%; /* Adjust as necessary */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* You can adjust the width */
+    text-align: center;
+    display: none; /* Initially hidden */
+    color: #FFF; /* Text color */
+    background-color: rgba(0,0,0,0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
   }
 
   .display {
@@ -35,23 +54,38 @@ body {
     grid-template-columns: repeat(3, 100px);
     justify-content: center;
     align-items: center;
+    gap: 200px;
+    margin-right: 200px;
   }
   
   .slot {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    margin: 10px;
+    width: 200px;
+    height: 200px;
+    border: 1px transparent;
+    margin-top: 10px;
+    margin-right: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2em;
+    min-width: 200px; /* Ensure slot boxes maintain width */
+    min-height: 200px;
+    position: relative;
   }
   
   .controls {
-    margin-top: 20px;
+    margin-top: 150px;
+    margin-right: 50px;
   }
   
+  #result, .balance-display {
+    position: absolute;
+    top: 4%; /* Adjust based on your layout */
+    width: 80%;
+    left: 15%;
+    text-align: center;
+  }
+
   input[type="number"], button {
     margin: 5px;
   }
