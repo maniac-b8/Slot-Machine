@@ -1,19 +1,19 @@
 /*----- constants -----*/
 const slotConfig = {
-  symbols: ['🍒', '🍋', '🍋', '🍇', '🍇', '🍇', '🍊', '🍊', '🍊', '🍉', '🍉', '🍉', '🍉'],
+  symbols: ['si/a.jpg', 'si/r.jpg', 'si/r.jpg', 'si/k.jpg', 'si/k.jpg', 'si/k.jpg', 'si/m.jpg', 'si/m.jpg', 'si/m.jpg', 'si/s.jpg', 'si/s.jpg', 'si/s.jpg', 'si/s.jpg'],
   payouts: {
-    '🍒🍒🍒': 50,
-    '🍋🍋🍋': 40,
-    '🍇🍇🍇': 30,
-    '🍊🍊🍊': 20,
-    '🍉🍉🍉': 10,
+    'si/a.jpgsi/a.jpgsi/a.jpg': 50,
+    'si/r.jpgsi/r.jpgsi/r.jpg': 40,
+    'si/k.jpgsi/k.jpgsi/k.jpg': 30,
+    'si/m.jpgsi/m.jpgsi/m.jpg': 20,
+    'si/s.jpgsi/s.jpgsi/s.jpg': 10,
   },
   partialPayouts: {
-    '🍒': 5,
-    '🍋': 4,
-    '🍇': 3,
-    '🍊': 2,
-    '🍉': 1,
+    'si/a.jpg': 5,
+    'si/r.jpg': 4,
+    'si/k.jpg': 3,
+    'si/m.jpg': 2, 
+    'si/s.jpg': 1,
   }
 };
 
@@ -98,9 +98,9 @@ function init() {
   }
 
   function displaySlotResults(results) {
-    slot1Element.textContent = results[0];
-    slot2Element.textContent = results[1];
-    slot3Element.textContent = results[2];
+    slot1Element.style.backgroundImage = `url(${results[0]})`;
+    slot2Element.style.backgroundImage = `url(${results[1]})`;
+    slot3Element.style.backgroundImage = `url(${results[2]})`;
   }
 
   function handleSpinResult(results, wager) {
@@ -108,6 +108,7 @@ function init() {
     let winnings = 0;
     if (slotConfig.payouts[resultString]) {
       winnings = slotConfig.payouts[resultString] * wager;
+      balance += winnings;
       resultElement.textContent = `You won ${winnings}! New balance: ${balance}`;
     } else {
       // Check for partial matches
@@ -121,7 +122,7 @@ function init() {
         if (symbolCounts[symbol] === 2) { // Partial match found
           winnings = slotConfig.partialPayouts[symbol] * wager;
           balance += winnings;
-          resultElement.textContent = `Partial match of ${symbol}. You won ${winnings}! New balance: ${balance}`;
+          resultElement.textContent = `Partial match. You won ${winnings}! New balance: ${balance}`;
           partialMatchFound = true;
           break;
         }
