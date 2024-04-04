@@ -71,18 +71,19 @@ audio {
 }
 
 .slot {
-  width: 200px; /* Set a fixed width for slots */
-  height: 200px; /* Set a fixed height for slots */
-  border: 5px transparent;
+  width: 220px; /* Set a fixed width for slots */
+  height: 210px; /* Set a fixed height for slots */
+  border: 2px;
   margin-top: 50px; /* Set a fixed margin */
   margin-right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 86px; /* Set a fixed font size */
-  min-width: 200px;
-  min-height: 200px;
   position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .controls {

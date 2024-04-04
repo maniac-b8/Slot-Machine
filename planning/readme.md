@@ -1,4 +1,4 @@
-<!-- 
+
 1) Define constants
  1.1 symbols for slots
 
@@ -17,7 +17,7 @@
 6) Handle win / loss logic 
  6.1 Add a multiplier for winning
  6.2 add reset button if the player is out of money
-  -->
+
 
 
   ![alt text](image.png)

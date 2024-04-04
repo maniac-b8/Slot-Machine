@@ -50,6 +50,8 @@ function init() {
   }
 
   function handleSpin() {
+    const spinSound = new Audio('aud/spin.mp3');
+    spinSound.play();
     disableSpinButton();
     const wager = parseInt(wagerInput.value);
     if (validateWager(wager)) {
@@ -69,8 +71,8 @@ function init() {
 
   function startSlotMachineAnimation(wager) {
     let counter = 0;
-    const maxFlashes = 12;
-    const initialFlashes = 8;
+    const maxFlashes = 30;
+    const initialFlashes = 16;
     let intervalSpeed = 100;
     const slowingDownFactor = 50;
     const slowingPoint = maxFlashes - initialFlashes;
