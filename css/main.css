@@ -11,8 +11,8 @@ body, html {
 body {
   font-family: "Girassol", sans-serif;
   background-image: url('bg2.jpg');
-  font-size: 46px; /* Set a fixed font size (adjust as needed) */
-  color: black;
+  font-size: 76px; /* Set a fixed font size (adjust as needed) */
+  color: white;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -44,9 +44,8 @@ body {
   width: 80%; /* Adjust as needed */
   text-align: center;
   display: none;
-  color: #FFF;
+  color: red;
   background-color: rgba(0,0,0,0.7);
-  padding: 20px;
   border-radius: 10px;
 }
 
@@ -55,7 +54,7 @@ body {
   grid-template-columns: repeat(3, 200px); /* Set a fixed width for grid columns */
   justify-content: center;
   align-items: center;
-  gap: 180px; /* Set a fixed gap size */
+  gap: 150px; /* Set a fixed gap size */
   margin-right: 40px; /* Set a fixed margin */
 }
 
@@ -77,7 +76,7 @@ body {
 .controls {
   margin-top: 50px; /* Set a fixed margin */
   margin-right: 20px; /* Set a fixed margin */
-  margin-bottom: 150px;
+  margin-bottom:290px;
 }
 
 .controls button {
