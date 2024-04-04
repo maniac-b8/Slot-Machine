@@ -5,8 +5,8 @@ or lose it all...
 
 # Screenshot
 
-<img src="https://imgur.com/Qq3IO7f">
-<img src="https://imgur.com/PFbFH5x">
+![alt text](si/ss1.jpg)
+![alt text](si/ss2.jpg)
 
 # Technologies Used
 
