@@ -93,9 +93,11 @@ audio {
 }
 
 .controls button {
-  font-size: 24px; /* Increase the font size of the button */
-  padding: 10px 20px; /* Increase the padding around the text */
+  font-size: 34px; /* Increase the font size of the button */
+  padding: 0px 10px; /* Increase the padding around the text */
   height: 50px; /* Increase the height of the button */
+  background-color: grey;
+  font-family: "Girassol", sans-serif;
 }
 
 #result, .balance-display {
@@ -110,6 +112,10 @@ audio {
 
 input[type="number"], button {
   margin: 10px; /* Set a fixed margin */
+  height: 40%;
+  top: 9%;
+  color: white;
+  background-color: rgba(26, 24, 24, 0.9);
 }
 
 button {

@@ -17,7 +17,7 @@ or lose it all...
 # Getting Started
 
 [Click to View Project Planning](https://github.com/maniac-b8/Slot-Machine/tree/main/planning)
-[Click to Play The lonley Mountain!](https://maniac-b8.github.io/Slot-Machine/)
+[Click to Play The Lonley Mountain!](https://maniac-b8.github.io/Slot-Machine/)
 
 # Next Steps
 

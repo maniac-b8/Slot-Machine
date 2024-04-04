@@ -152,7 +152,7 @@ function init() {
   function handleZeroBalance() {
     disableSpinButton();
     balance = 0;
-    messageWindow.textContent = 'You have lost all your balance. Click the reset button to start again.';
+    messageWindow.textContent = 'You have lost all your coin. If you or anyone is struggling with gambling addiction please call 1-800-GAMBLER for help';
     messageWindow.style.display = 'block';
     const resetButton = document.createElement('button');
     resetButton.textContent = 'Play Again';
