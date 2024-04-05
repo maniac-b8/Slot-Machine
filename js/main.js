@@ -1,18 +1,18 @@
 /*----- constants -----*/
 const slotConfig = {
-  symbols: ['si/a.jpg', 'si/r.jpg', 'si/r.jpg', 'si/k.jpg', 'si/k.jpg', 'si/k.jpg', 'si/m.jpg', 'si/m.jpg', 'si/m.jpg', 'si/s.jpg', 'si/s.jpg', 'si/s.jpg', 'si/s.jpg'],
+  symbols: ['si/a.png', 'si/r.png', 'si/r.png', 'si/k.png', 'si/k.png', 'si/k.png', 'si/m.png', 'si/m.png', 'si/m.png', 'si/s.jpg', 'si/s.jpg', 'si/s.jpg', 'si/s.jpg'],
   payouts: {
-    'si/a.jpgsi/a.jpgsi/a.jpg': 50,
-    'si/r.jpgsi/r.jpgsi/r.jpg': 40,
-    'si/k.jpgsi/k.jpgsi/k.jpg': 30,
-    'si/m.jpgsi/m.jpgsi/m.jpg': 20,
+    'si/a.pngsi/a.pngsi/a.png': 50,
+    'si/r.pngsi/r.pngsi/r.png': 40,
+    'si/k.pngsi/k.pngsi/k.png': 30,
+    'si/m.pngsi/m.pngsi/m.png': 20,
     'si/s.jpgsi/s.jpgsi/s.jpg': 10,
   },
   partialPayouts: {
-    'si/a.jpg': 5,
-    'si/r.jpg': 4,
-    'si/k.jpg': 3,
-    'si/m.jpg': 2, 
+    'si/a.png': 5,
+    'si/r.png': 4,
+    'si/k.png': 3,
+    'si/m.png': 2, 
     'si/s.jpg': 1,
   }
 };
@@ -152,10 +152,14 @@ function init() {
   function handleZeroBalance() {
     disableSpinButton();
     balance = 0;
-    messageWindow.textContent = 'You have lost all your coin. If you or anyone is struggling with gambling addiction please call 1-800-GAMBLER for help';
+    messageWindow.textContent = 'You have lost all your coin. Hit the play again button to restart';
     messageWindow.style.display = 'block';
     const resetButton = document.createElement('button');
     resetButton.textContent = 'Play Again';
+    resetButton.style.height = '90px';
+    resetButton.style.width = '120px';
+    resetButton.style.fontFamily = '"Girassol", sans-serif';
+    resetButton.style.fontSize = '25px';
     resetButton.addEventListener('click', () => {
       balance = startingAmount;
       messageWindow.style.display = 'none';
