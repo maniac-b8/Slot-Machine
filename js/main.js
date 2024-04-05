@@ -113,15 +113,13 @@ function init() {
       balance += winnings;
       resultElement.textContent = `You won ${winnings}! New balance: ${balance}`;
     } else {
-      // Check for partial matches
       const symbolCounts = results.reduce((acc, symbol) => {
         acc[symbol] = (acc[symbol] || 0) + 1;
         return acc;
       }, {});
-  
       let partialMatchFound = false;
       for (const symbol in symbolCounts) {
-        if (symbolCounts[symbol] === 2) { // Partial match found
+        if (symbolCounts[symbol] === 2) {
           winnings = slotConfig.partialPayouts[symbol] * wager;
           balance += winnings;
           resultElement.textContent = `Partial match. You won ${winnings}! New balance: ${balance}`;
@@ -129,7 +127,6 @@ function init() {
           break;
         }
       }
-      // No matches or partial matches
       if (!partialMatchFound) {
         balance -= wager;
         resultElement.textContent = `You lost. New balance: ${balance}`;
